@@ -48,6 +48,13 @@ testing/docker/*/xtools
 
 # This is the place where toolchains are built
 .build/
+builds/
+builds-*
+crosstool-NG*
+lib/crosstool-ng*
+lib/ct-ng.*
+share/
+
 # .. and log for 'build-all'
 .build-all/
 # .. and release creation
