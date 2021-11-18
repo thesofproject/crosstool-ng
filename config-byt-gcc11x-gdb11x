@@ -190,7 +190,7 @@ CT_ARCH_32=y
 CT_TARGET_CFLAGS=""
 CT_TARGET_LDFLAGS=""
 CT_TARGET_USE_OVERLAY=y
-CT_OVERLAY_NAME="apl"
+CT_OVERLAY_NAME="byt"
 CT_OVERLAY_LOCATION="../xtensa-overlay"
 # end of Target options
 
@@ -211,7 +211,7 @@ CT_TOOLCHAIN_BUGURL=""
 #
 # Tuple completion and aliasing
 #
-CT_TARGET_VENDOR="apl"
+CT_TARGET_VENDOR="byt"
 CT_TARGET_ALIAS_SED_EXPR=""
 CT_TARGET_ALIAS=""
 
