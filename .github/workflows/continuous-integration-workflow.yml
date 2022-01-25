@@ -11,7 +11,6 @@ jobs:
       matrix:
         host: [
           "ubuntu-latest",
-          "macos-10.15",
         ]
     steps:
       - name: "clone"
@@ -57,7 +56,6 @@ jobs:
       matrix:
         host: [
           "ubuntu-latest",
-          "macos-10.15",
         ]
         sample: [
           "aarch64-unknown-linux-gnu",
