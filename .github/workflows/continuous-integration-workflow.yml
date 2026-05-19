@@ -37,12 +37,12 @@ jobs:
           make install
           tar -cf ct-ng.tar .local/
       - name: "upload ct-ng"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: crosstool.${{ matrix.host }}
           path: ct-ng.tar
       - name: "upload config.log"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: config.log.${{ matrix.host }}
           path: config.log
@@ -92,9 +92,10 @@ jobs:
           hdiutil mount ${HOME}/Workspace.sparseimage -mountroot /Users/runner/work/crosstool-ng
           cd crosstool-ng
       - name: "download ct-ng"
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: crosstool.${{ matrix.host }}
+          path: .
       - name: "extract ct-ng"
         run: |
           tar -xf ct-ng.tar
@@ -118,7 +119,7 @@ jobs:
           sed -i -e '/CT_PREFIX_DIR/s/HOME/CT_TOP_DIR/' .config
           ct-ng build
       - name: "upload log"
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: "${{ matrix.sample }}.${{ matrix.host }}.log"
           path: |
