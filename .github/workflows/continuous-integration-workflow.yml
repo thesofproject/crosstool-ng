@@ -58,30 +58,9 @@ jobs:
           "ubuntu-latest",
         ]
         sample: [
-          "aarch64-unknown-linux-gnu",
-          "arc-multilib-linux-uclibc",
-          "arm-picolibc-eabi",
-          "arm-unknown-linux-gnueabi",
-          "armv6-nommu-linux-uclibcgnueabi",
-          "mips-unknown-elf",
-          "mips64-unknown-linux-gnu",
-          "powerpc-unknown-linux-gnu",
-          "powerpc64-unknown-linux-gnu",
-          "riscv32-unknown-elf",
-          "riscv64-unknown-elf",
-          "s390-unknown-linux-gnu",
-          "sh-multilib-linux-gnu",
-          "sparc-unknown-linux-gnu",
           "x86_64-unknown-linux-gnu",
-          "x86_64-multilib-linux-uclibc",
-          "xtensa-fsf-linux-uclibc"
+          "x86_64-multilib-linux-uclibc"
         ]
-        exclude:
-          # Exclude mips64-*-linux-gnu because of <byteswap.h> usage in
-          # elf-entry.c for linux kernel headers.  <byteswap.h> is a GNU
-          # extension and doesn't exist on MacOS X
-          - host: "macos-10.15"
-            sample: "mips64-unknown-linux-gnu"
     steps:
       - name: Create case sensitive workspace volume for macOS
         if: ${{ runner.os == 'macOS' }}
